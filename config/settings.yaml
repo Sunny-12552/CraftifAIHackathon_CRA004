@@ -1,0 +1,67 @@
+# VisionSentinel AI -- default configuration.
+#
+# These are safe startup defaults, not measured results. Real inference latency
+# and FPS are always measured at runtime and written to evidence/.
+#
+# Override any value per run with the CLI flags of run_monitor.py / app.py, or
+# with the environment variables documented in .env.example.
+
+video:
+  source_type: webcam        # webcam | file | rtsp
+  camera_index: 0
+  file_path: ""              # used when source_type = file
+  rtsp_url: ""               # used when source_type = rtsp
+  width: 640
+  height: 480
+  fps_limit: 0               # 0 = uncapped
+  reopen_attempts: 3         # transient read failures tolerated before raising
+  reopen_delay_s: 1.0
+
+detection:
+  # auto | intel | cpu | nvidia_ort | pipegen
+  # "auto" resolves to the Intel GPU when OpenVINO sees one, otherwise CPU.
+  # It never selects nvidia_ort: that backend is a developer convenience and is
+  # explicitly NOT CraftifAI PipeGen and NOT hackathon compliance, so it must be
+  # requested by name.
+  backend: auto
+  model_path: ""             # empty -> <models_dir>/object_detection_yolox_2022nov.onnx
+  model_url: "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/object_detection_yolox/object_detection_yolox_2022nov.onnx"
+  confidence_threshold: 0.35
+  nms_threshold: 0.45
+  model_size: 640
+  strides: [8, 16, 32]
+
+tracking:
+  enabled: true
+  iou_threshold: 0.30
+  max_age: 15                # frames a track survives with no matching detection
+  min_hits: 1
+
+alerts:
+  enter_frames: 3            # consecutive inside frames required before ENTER
+  exit_frames: 5             # consecutive outside frames required before EXIT
+  cooldown_seconds: 20.0     # per (zone, track) suppression window for re-entry
+  min_confidence: 0.35       # detections below this never inform zone occupancy
+  record_exits: true         # also persist person_exited_zone rows for a full audit trail
+
+zones:
+  - id: zone-1
+    name: Restricted Area A
+    enabled: true
+    # Normalised coordinates (0.0 - 1.0) so a zone is independent of resolution.
+    polygon_normalized:
+      - [0.30, 0.30]
+      - [0.70, 0.30]
+      - [0.70, 0.80]
+      - [0.30, 0.80]
+
+storage:
+  db_path: ""                # empty -> <data_dir>/incidents.db
+  export_dir: ""             # empty -> <data_dir>/exports
+  save_snapshots: false      # off by default: incident evidence can contain people
+  snapshot_dir: ""           # empty -> <data_dir>/snapshots
+  retention_days: 0          # 0 = retain everything
+
+metrics:
+  window: 120                # samples retained for rolling p50/p95 latency
+  report_path: ""            # empty -> evidence/performance_report.json

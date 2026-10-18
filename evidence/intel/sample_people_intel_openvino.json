@@ -1,0 +1,89 @@
+{
+  "backend": "intel_openvino",
+  "device": "Intel GPU (GPU)",
+  "compliance_eligible": false,
+  "image": "C:\\Users\\samyu\\AppData\\Local\\Temp\\opencode\\evidence_work\\sample_people.jpg",
+  "image_shape": [
+    1080,
+    810,
+    3
+  ],
+  "warmup_ms": 63.17,
+  "mean_ms": 61.67,
+  "min_ms": 55.26,
+  "max_ms": 71.83,
+  "fps": 16.21,
+  "frames_timed": 15,
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.9085,
+      "bbox_xywh": [
+        668,
+        391,
+        142,
+        488
+      ],
+      "foot_point": [
+        739.0,
+        879.0
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.9017,
+      "bbox_xywh": [
+        54,
+        402,
+        151,
+        487
+      ],
+      "foot_point": [
+        129.5,
+        889.0
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.8914,
+      "bbox_xywh": [
+        222,
+        409,
+        126,
+        445
+      ],
+      "foot_point": [
+        285.0,
+        854.0
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.5971,
+      "bbox_xywh": [
+        0,
+        550,
+        66,
+        323
+      ],
+      "foot_point": [
+        33.0,
+        873.0
+      ]
+    },
+    {
+      "label": "bus",
+      "confidence": 0.9417,
+      "bbox_xywh": [
+        20,
+        221,
+        785,
+        518
+      ],
+      "foot_point": [
+        412.5,
+        739.0
+      ]
+    }
+  ]
+}

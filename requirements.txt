@@ -1,0 +1,13 @@
+# VisionSentinel AI -- core runtime (Windows / Intel / CPU).
+# This set deliberately requires no CUDA, TensorRT, Docker, or WSL.
+# The single verified-working combination on the development laptop is recorded
+# in README.md under "Pinned development environment".
+
+numpy>=2.0,<3
+opencv-python>=4.10
+openvino>=2025.0
+PyYAML>=6.0
+streamlit>=1.40
+
+# Test-only
+pytest>=8.0

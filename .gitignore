@@ -1,0 +1,37 @@
+# Byte-compiled files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Local, machine-specific configuration and secrets
+.env
+.streamlit/secrets.toml
+
+# Runtime state. By default this lives outside the repository
+# (%LOCALAPPDATA%\VisionSentinelAI), but ignore it here too in case
+# VS_APP_DIR points back inside the project.
+data/
+models/
+*.db
+*.db-wal
+*.db-shm
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

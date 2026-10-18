@@ -1,0 +1,24 @@
+{
+  "backend": "intel_openvino",
+  "device": "Intel GPU (GPU)",
+  "compliance_eligible": false,
+  "model_path": "C:\\Users\\samyu\\AppData\\Local\\VisionSentinelAI\\models\\object_detection_yolox_2022nov.onnx",
+  "model_downloaded": true,
+  "warmup_ms": 177.49,
+  "mean_ms": 63.62,
+  "min_ms": 55.76,
+  "max_ms": 71.48,
+  "fps": 15.72,
+  "frames": 20,
+  "python": "3.14.2",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "openvino": {
+    "openvino_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+    "available_devices": [
+      "CPU",
+      "GPU"
+    ],
+    "intel_gpu": "GPU"
+  },
+  "synthetic_frame_detections": 0
+}

@@ -1,0 +1,82 @@
+{
+  "application": "VisionSentinel AI",
+  "note": "All values were measured at runtime on the machine that produced this report. No figure in this file is a design target, a specification or an estimate.",
+  "generated_utc": "2026-10-17T14:38:05.211Z",
+  "measurement": "runtime-measured",
+  "window": 120,
+  "totals": {
+    "frames_processed": 20,
+    "frames_dropped": 0,
+    "elapsed_s": 4.284,
+    "throughput_fps": 4.669,
+    "rolling_fps": 12.547
+  },
+  "stages": {
+    "inference_ms": {
+      "count": 20,
+      "mean_ms": 62.114,
+      "min_ms": 53.447,
+      "p50_ms": 61.409,
+      "p95_ms": 72.975,
+      "max_ms": 83.674
+    },
+    "zone_ms": {
+      "count": 20,
+      "mean_ms": 0.217,
+      "min_ms": 0.074,
+      "p50_ms": 0.141,
+      "p95_ms": 0.423,
+      "max_ms": 1.512
+    },
+    "total_ms": {
+      "count": 20,
+      "mean_ms": 72.615,
+      "min_ms": 58.988,
+      "p50_ms": 69.628,
+      "p95_ms": 81.952,
+      "max_ms": 133.663
+    }
+  },
+  "stage_share_ms": {
+    "inference_ms": 1242.273,
+    "zone_ms": 4.347,
+    "total_ms": 1452.291
+  },
+  "environment": {
+    "python_version": "3.14.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_count": 16,
+    "openvino_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+    "openvino_devices": [
+      "CPU",
+      "GPU"
+    ],
+    "opencv_version": "5.0.0"
+  },
+  "context": {
+    "backend": "intel_openvino",
+    "device": "Intel GPU (GPU)",
+    "camera_id": "cam-0",
+    "source": {
+      "camera_id": "cam-0",
+      "type": "file",
+      "path": "C:\\Users\\samyu\\AppData\\Local\\Temp\\opencode\\evidence_work\\sample_people_clip.mp4"
+    },
+    "original_frame_size": [
+      640,
+      480
+    ],
+    "compliance_eligible": false,
+    "zones": [
+      "zone-1"
+    ],
+    "enter_frames": 3,
+    "exit_frames": 5,
+    "cooldown_seconds": 20.0,
+    "incidents": 1,
+    "suppressed_duplicates": 0,
+    "notes": []
+  }
+}

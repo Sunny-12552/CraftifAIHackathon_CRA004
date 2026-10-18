@@ -1,0 +1,82 @@
+{
+  "application": "VisionSentinel AI",
+  "note": "All values were measured at runtime on the machine that produced this report. No figure in this file is a design target, a specification or an estimate.",
+  "generated_utc": "2026-10-17T18:12:44.492Z",
+  "measurement": "runtime-measured",
+  "window": 120,
+  "totals": {
+    "frames_processed": 3263,
+    "frames_dropped": 0,
+    "elapsed_s": 601.589,
+    "throughput_fps": 5.424,
+    "rolling_fps": 9.481
+  },
+  "stages": {
+    "inference_ms": {
+      "count": 120,
+      "mean_ms": 98.186,
+      "min_ms": 85.211,
+      "p50_ms": 95.331,
+      "p95_ms": 123.424,
+      "max_ms": 150.707
+    },
+    "zone_ms": {
+      "count": 120,
+      "mean_ms": 0.052,
+      "min_ms": 0.017,
+      "p50_ms": 0.048,
+      "p95_ms": 0.067,
+      "max_ms": 0.341
+    },
+    "total_ms": {
+      "count": 120,
+      "mean_ms": 98.987,
+      "min_ms": 85.896,
+      "p50_ms": 96.131,
+      "p95_ms": 124.099,
+      "max_ms": 151.541
+    }
+  },
+  "stage_share_ms": {
+    "inference_ms": 581039.345,
+    "zone_ms": 259.947,
+    "total_ms": 585480.455
+  },
+  "environment": {
+    "python_version": "3.14.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_count": 16,
+    "openvino_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+    "openvino_devices": [
+      "CPU",
+      "GPU"
+    ],
+    "opencv_version": "5.0.0"
+  },
+  "context": {
+    "backend": "cpu_openvino",
+    "device": "CPU (CPU)",
+    "camera_id": "cam-0",
+    "source": {
+      "camera_id": "cam-0",
+      "type": "webcam",
+      "index": 0
+    },
+    "original_frame_size": [
+      640,
+      480
+    ],
+    "compliance_eligible": false,
+    "zones": [
+      "zone-1"
+    ],
+    "enter_frames": 3,
+    "exit_frames": 5,
+    "cooldown_seconds": 20.0,
+    "incidents": 0,
+    "suppressed_duplicates": 0,
+    "notes": []
+  }
+}
